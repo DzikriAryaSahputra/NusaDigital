@@ -1,0 +1,1361 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nusa Digital - Jasa Pembuatan Website Profesional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+        }
+
+        .logo-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+        
+        .logo-icon {
+            position: relative;
+            width: 80px;
+            height: 80px;
+        }
+        
+        .hexagon-layer {
+            position: absolute;
+            border: 3px solid #fbbf24;
+            transform: rotate(0deg);
+            border-radius: 8px;
+        }
+        
+        .hex-1 {
+            width: 70px;
+            height: 70px;
+            top: 5px;
+            left: 5px;
+            transform: rotate(45deg);
+            opacity: 0.4;
+        }
+        
+        .hex-2 {
+            width: 55px;
+            height: 55px;
+            top: 12.5px;
+            left: 12.5px;
+            transform: rotate(45deg);
+            opacity: 0.6;
+        }
+        
+        .hex-3 {
+            width: 40px;
+            height: 40px;
+            top: 20px;
+            left: 20px;
+            transform: rotate(45deg);
+            opacity: 0.8;
+        }
+        
+        .hex-4 {
+            width: 25px;
+            height: 25px;
+            top: 27.5px;
+            left: 27.5px;
+            transform: rotate(45deg);
+            background: #fbbf24;
+            border: none;
+        }
+        
+        /* Digital circuit pattern */
+        .circuit-dot {
+            position: absolute;
+            width: 6px;
+            height: 6px;
+            background: #fbbf24;
+            border-radius: 50%;
+        }
+        
+        .dot-1 { top: 15px; right: -5px; }
+        .dot-2 { bottom: 15px; left: -5px; }
+        .dot-3 { top: -5px; left: 25px; }
+        
+        .circuit-line {
+            position: absolute;
+            background: #fbbf24;
+            height: 2px;
+        }
+        
+        .line-1 {
+            top: 18px;
+            right: -15px;
+            width: 12px;
+        }
+        
+        .line-2 {
+            bottom: 18px;
+            left: -15px;
+            width: 12px;
+        }
+        
+        .logo-text {
+            color: white;
+        }
+        
+        .company-name {
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 8px;
+            text-transform: uppercase;
+        }
+        
+        .nusa {
+            color: #fbbf24;
+        }
+        
+        .digital {
+            color: white;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+/*----------------------------------------------------------------------------------*/
+
+
+
+        /* Portfolio Section */
+        .portfolio {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+
+        .portfolio h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .portfolio-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .portfolio-categories {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .category-btn {
+            background: white;
+            border: 2px solid #e9ecef;
+            padding: 10px 20px;
+            border-radius: 25px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            color: #666;
+        }
+
+        .category-btn:hover,
+        .category-btn.active {
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            border-color: #667eea;
+            transform: translateY(-2px);
+        }
+
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .portfolio-item {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .portfolio-item.hidden {
+            opacity: 0;
+            transform: scale(0.8);
+            display: none;
+        }
+
+        .portfolio-image {
+            padding: 2rem 2rem 1rem;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .mockup-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .device-frame {
+            position: relative;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+
+        .device-frame.laptop {
+            width: 280px;
+            height: 180px;
+            background: #333;
+            border: 8px solid #333;
+        }
+
+        .device-frame.mobile {
+            width: 160px;
+            height: 280px;
+            background: #333;
+            border: 6px solid #333;
+            border-radius: 25px;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .website-mockup {
+            width: 100%;
+            height: 100%;
+            padding: 8px;
+        }
+
+        .header-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            margin-bottom: 8px;
+        }
+
+        .nav-item {
+            width: 40px;
+            height: 8px;
+            background: #dee2e6;
+            border-radius: 4px;
+        }
+
+        .nav-items {
+            display: flex;
+            gap: 4px;
+        }
+
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            background: #667eea;
+            border-radius: 50%;
+        }
+
+        .nav-dot.blue {
+            background: #007bff;
+        }
+
+        .logo-placeholder {
+            width: 60px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 6px;
+        }
+
+        .logo-text {
+            font-size: 12px;
+            font-weight: bold;
+            color: #667eea;
+        }
+
+        .hero-section {
+            padding: 8px 12px;
+        }
+
+        .content-block {
+            background: #e9ecef;
+            border-radius: 4px;
+            margin-bottom: 6px;
+        }
+
+        .content-block.large {
+            height: 40px;
+        }
+
+        .content-block.medium {
+            height: 20px;
+            width: 70%;
+        }
+
+        /* E-commerce Design */
+        .ecommerce-design .product-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .product-card {
+            height: 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+        }
+
+        /* Restaurant Design */
+        .restaurant-design .food-image {
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+            border-radius: 8px;
+            margin-bottom: 8px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 4px;
+        }
+
+        .menu-item {
+            height: 20px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+
+        .menu-icon {
+            width: 16px;
+            height: 16px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+
+        /* Personal Design */
+        .personal-design .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 12px;
+        }
+
+        .avatar {
+            width: 30px;
+            height: 30px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .name-bar {
+            height: 8px;
+            background: #333;
+            border-radius: 4px;
+            margin-bottom: 4px;
+            width: 80%;
+        }
+
+        .bio-bar {
+            height: 6px;
+            background: #666;
+            border-radius: 3px;
+            width: 60%;
+        }
+
+        .portfolio-preview {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+        }
+
+        .work-item {
+            height: 40px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 6px;
+        }
+
+        /* Medical Design */
+        .medical-logo {
+            width: 20px;
+            height: 20px;
+            background: #28a745;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+        }
+
+        .appointment-form {
+            padding: 12px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+
+        .form-field {
+            height: 12px;
+            background: white;
+            border-radius: 4px;
+            margin-bottom: 6px;
+            border: 1px solid #dee2e6;
+        }
+
+        .cta-button-mini {
+            height: 16px;
+            background: linear-gradient(45deg, #007bff, #0056b3);
+            border-radius: 4px;
+            width: 60%;
+        }
+
+        /* Marketplace Design */
+        .marketplace-design .search-bar {
+            height: 12px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            flex: 1;
+            margin-right: 8px;
+        }
+
+        .cart-icon {
+            width: 12px;
+            height: 12px;
+            background: #667eea;
+            border-radius: 2px;
+        }
+
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 6px;
+            margin-top: 8px;
+        }
+
+        .category-item {
+            height: 30px;
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border-radius: 6px;
+            border: 1px solid #dee2e6;
+        }
+
+        .portfolio-info {
+            padding: 1.5rem;
+        }
+
+        .portfolio-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: #333;
+        }
+
+        .screen {
+            width: 100%;
+            height: 100%;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 8px;
+            background: #f8f9fa;
+        }
+        .screen img.cover {
+            object-fit: cover;
+        }
+        
+        .screen img.fill {
+            object-fit: fill;
+        }
+        
+        .screen img.scale-down {
+            object-fit: scale-down;
+        }
+        .portfolio-info p {
+            color: #666;
+            margin-bottom: 1rem;
+            font-size: 0.9rem;
+            line-height: 1.5;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-size: 0.8rem;
+            font-weight: 500;
+        }
+
+        .portfolio-cta {
+            text-align: center;
+            margin-top: 3rem;
+        }
+
+        .portfolio-cta p {
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+        }
+
+        /* Responsive Portfolio */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .portfolio-categories {
+                gap: 0.5rem;
+            }
+            
+            .category-btn {
+                padding: 8px 16px;
+                font-size: 0.9rem;
+            }
+            
+            .device-frame.laptop {
+                width: 240px;
+                height: 150px;
+            }
+            
+            .device-frame.mobile {
+                width: 140px;
+                height: 240px;
+            }
+        }
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #667eea 0%, #1e40af 100%);
+            color: white;
+            padding: 1rem 0;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #fff, #f0f8ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-links a {
+            color: white;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+
+        .nav-links a:hover {
+            background: rgba(255,255,255,0.2);
+            transform: translateY(-2px);
+            color: #fbbf24;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #667eea 0%, #1e40af  100%);
+            color: white;
+            padding: 150px 0 100px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: float 20s linear infinite;
+        }
+
+        @keyframes float {
+            0% { transform: translateY(0px) rotate(0deg); }
+            100% { transform: translateY(-20px) rotate(360deg); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            animation: slideDown 1s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+            animation: slideUp 1s ease-out 0.3s both;
+        }
+
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @keyframes slideUp {
+            from { opacity: 0; transform: translateY(50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .cta-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #ff6b6b, #ee5a24);
+            color: white;
+            padding: 15px 40px;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(255,107,107,0.3);
+            animation: pulse 2s infinite;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(255,107,107,0.4);
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background: #f8f9fa;
+        }
+
+        .features h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 3px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+            transition: all 0.3s ease;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+        }
+
+        .feature-card:hover::before {
+            left: 0;
+        }
+
+        .feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: #667eea;
+        }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+        }
+
+        .pricing h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 3rem;
+            color: #333;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .pricing-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .pricing-card.popular {
+            transform: scale(1.05);
+            border: 3px solid #667eea;
+        }
+
+        .popular-badge {
+            position: absolute;
+            top: 20px;
+            right: -30px;
+            background: #ff6b6b;
+            color: white;
+            padding: 5px 40px;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transform: rotate(45deg);
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+
+        .pricing-card.popular:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .package-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1rem;
+            color: #333;
+        }
+
+        .package-price {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 1rem;
+        }
+
+        .package-features {
+            list-style: none;
+            margin: 2rem 0;
+        }
+
+        .package-features li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+
+        .package-features li:last-child {
+            border-bottom: none;
+        }
+
+        .package-features li::before {
+            content: '✓';
+            color: #28a745;
+            font-weight: bold;
+            margin-right: 0.5rem;
+        }
+
+        .package-button {
+            display: inline-block;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            color: white;
+            padding: 12px 30px;
+            text-decoration: none;
+            border-radius: 25px;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            margin-top: 1rem;
+        }
+
+        .package-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102,126,234,0.3);
+        }
+
+        /* Contact Section */
+        .contact {
+            padding: 100px 0;
+            background: #333;
+            color: white;
+            text-align: center;
+        }
+
+        .contact h2 {
+            font-size: 2.5rem;
+            margin-bottom: 2rem;
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .contact-icon {
+            font-size: 1.5rem;
+            color: #667eea;
+        }
+
+        /* Footer */
+        footer {
+            background: #222;
+            color: white;
+            text-align: center;
+            padding: 2rem 0;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .contact-info {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            .logo-container {
+                padding: 20px 50px;
+            }
+            
+            .logo-wrapper {
+                flex-direction:initial;
+                text-align: center;
+                gap: 20px;
+            }
+            
+            .company-name {
+                font-size: 36px;
+            }
+        }
+         /* Animation */
+        .logo-icon {
+            animation: float 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-5px); }
+        }
+        
+        .hexagon-layer {
+            transition: all 0.3s ease;
+        }
+        
+        .logo-container:hover .hex-1 {
+            transform: rotate(45deg) scale(1.05);
+        }
+        
+        .logo-container:hover .hex-2 {
+            transform: rotate(45deg) scale(1.08);
+        }
+        
+        .logo-container:hover .hex-3 {
+            transform: rotate(45deg) scale(1.1);
+        }
+        
+        /* Glow effect */
+        
+        
+        
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav class="container">
+           <div class="logo-wrapper">
+            <div class="logo-icon">
+                <div class="hexagon-layer hex-1"></div>
+                <div class="hexagon-layer hex-2"></div>
+                <div class="hexagon-layer hex-3"></div>
+                <div class="hexagon-layer hex-4"></div>
+                
+                <!-- Digital circuit elements -->
+                <div class="circuit-dot dot-1"></div>
+                <div class="circuit-dot dot-2"></div>  
+                <div class="circuit-dot dot-3"></div>
+                <div class="circuit-line line-1"></div>
+                <div class="circuit-line line-2"></div>
+            </div>
+            
+            <div class="logo-text">
+                <div class="company-name">
+                    <span class="nusa">NUSA</span>
+                    <span class="digital">DIGITAL</span>
+                </div>
+            </div>
+        </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#layanan">Layanan</a></li>
+                <li><a href="#portfolio">Desain</a></li>
+                <li><a href="#paket">Paket</a></li>
+                <li><a href="#kontak">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Website Profesional untuk Bisnis Anda</h1>
+                <p>Wujudkan impian digital Anda bersama Nusa Digital. Kami menyediakan layanan pembuatan website berkualitas tinggi dengan harga terjangkau.</p>
+                <a href="#paket" class="cta-button">Lihat Paket Kami</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features" id="layanan">
+        <div class="container">
+            <h2>Mengapa Memilih Nusa Digital?</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">🚀</div>
+                    <h3>Loading Super Cepat</h3>
+                    <p>Website Anda akan memiliki performa loading yang sangat cepat untuk pengalaman pengguna yang optimal.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📱</div>
+                    <h3>Responsive Design</h3>
+                    <p>Tampilan sempurna di semua perangkat - desktop, tablet, dan smartphone dengan desain yang responsif.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🔒</div>
+                    <h3>Keamanan Terjamin</h3>
+                    <p>Sistem keamanan berlapis dan backup otomatis untuk melindungi data dan website Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🎨</div>
+                    <h3>Design Custom</h3>
+                    <p>Desain website yang unik dan sesuai dengan identitas brand bisnis Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📈</div>
+                    <h3>SEO Friendly</h3>
+                    <p>Website dioptimasi untuk mesin pencari agar mudah ditemukan calon pelanggan Anda.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛠️</div>
+                    <h3>Support 24/7</h3>
+                    <p>Tim support yang siap membantu Anda kapan saja dengan respon yang cepat dan profesional.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+<!-- Portfolio Section -->
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <h2>Desain dari Kami</h2>
+            <p class="portfolio-subtitle">Lihat hasil karya terbaik yang telah kami buat untuk berbagai industri</p>
+            
+            <div class="portfolio-categories">
+                <button class="category-btn active" data-filter="all">Semua</button>
+                <button class="category-btn" data-filter="ecommerce">E-commerce</button>
+                <button class="category-btn" data-filter="corporate">Corporate</button>
+                <button class="category-btn" data-filter="restaurant">Restaurant</button>
+                <button class="category-btn" data-filter="personal">Personal</button>
+            </div>
+
+            <div class="portfolio-grid">
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <div class="mockup-container">
+                            <div class="device-frame laptop">
+                                <div class="screen">
+                                    <img src="Annotation 2025-06-09 122223.jpg" class="cover" alt="Toko Online Elektronik">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Toko Online Elektronik</h4>
+                        <p>E-commerce modern dengan sistem pembayaran terintegrasi</p>
+                        <span class="portfolio-tag">Paket Bisnis</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="corporate">
+                    <div class="portfolio-image">
+                        <div class="mockup-container">
+                            <div class="device-frame laptop">
+                                <div class="screen">
+                                    <img src="" class="cover" alt="Website Corporate">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Website Corporate</h4>
+                        <p>Desain profesional untuk perusahaan konsultan teknologi</p>
+                        <span class="portfolio-tag">Paket Perusahaan</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="restaurant">
+                    <div class="portfolio-image">
+                        <div class="mockup-container">
+                            <div class="device-frame laptop">
+                                <div class="screen">
+                                    <img src="DeliveryWeb.jpg" class="cover" alt="Website Restoran">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Website Restoran</h4>
+                        <p>Desain menarik dengan menu digital dan reservasi online</p>
+                        <span class="portfolio-tag">Paket Bisnis</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="personal">
+                    <div class="portfolio-image">
+                        <div class="mockup-container">
+                            <div class="device-frame mobile">
+                                <div class="screen">
+                                    <img src="WhatsApp Image 2025-06-15 at 23.39.34.jpeg" class="cover" alt="Portfolio Personal">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Portfolio Personal</h4>
+                        <p>Website portofolio untuk fotografer dan desainer</p>
+                        <span class="portfolio-tag">Paket Hemat</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="corporate">
+                    <div class="portfolio-image">
+                        <div class="mockup-container">
+                            <div class="device-frame laptop">
+                                <div class="screen">
+                                    <img src="Trust-Care-medical-website-design-1024x781.png" class="cover" alt="Klinik Kesehatan">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Klinik Kesehatan</h4>
+                        <p>Website klinik dengan sistem booking appointment online</p>
+                        <span class="portfolio-tag">Paket Perusahaan</span>
+                    </div>
+                </div>
+
+                <div class="portfolio-item" data-category="ecommerce">
+                    <div class="portfolio-image">
+                        <div class="mockup-container">
+                            <div class="device-frame mobile">
+                                <div class="screen">
+                                    <img src="WhatsApp Image 2025-06-16 at 00.12.50.jpeg" class="cover" alt="Marketplace UMKM">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="portfolio-info">
+                        <h4>Marketplace UMKM</h4>
+                        <p>Platform jual beli online untuk usaha kecil menengah</p>
+                        <span class="portfolio-tag">Paket Bisnis</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-cta">
+                <p>Ingin melihat lebih banyak project dan mendiskusikan kebutuhan Anda?</p>
+                <a href="https://wa.me/6283112540839" class="cta-button">Lihat Portfolio Lengkap</a>
+            </div>
+        </div>
+    </section>
+    <!-- Pricing Section -->
+    <section class="pricing" id="paket">
+        <div class="container">
+            <h2>Pilih Paket yang Sesuai untuk Anda</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="package-name">Paket Hemat</div>
+                    <div class="package-price">Rp 1.000.000</div>
+                    <ul class="package-features">
+                        <li>Website 5 Halaman</li>
+                        <li>Free Template</li>
+                        <li>Design Responsif</li>
+                        <li>Free Domain .com</li>
+                        <li>Hosting 1 Tahun</li>
+                        <li>SSL Certificate</li>
+                        <li>Basic SEO Setup</li>
+                        <li>Support 3 Bulan</li>
+                        <li>Konsultasi 24/7</li>
+                        <li>Respon Website Hingga 5 Mili</li>
+                    </ul>
+                    <a href="https://wa.me/6283112540839" class="package-button">Pilih Paket</a>
+                </div>
+
+                <div class="pricing-card popular">
+                    <div class="popular-badge">TERPOPULER</div>
+                    <div class="package-name">Paket Bisnis</div>
+                    <div class="package-price">Rp 2.500.000</div>
+                    <ul class="package-features">
+                        <li>Website 10 Halaman</li>
+                        <li>Free Template</li>
+                        <li>Design Premium</li>
+                        <li>Free Domain .com</li>
+                        <li>Hosting Premium 1 Tahun</li>
+                        <li>SSL Certificate</li>
+                        <li>Advanced SEO</li>
+                        <li>Google Analytics</li>
+                        <li>Contact Form</li>
+                        <li>Support 6 Bulan</li>
+                    </ul>
+                    <a href="https://wa.me/6283112540839" class="package-button">Pilih Paket</a>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="package-name">Paket Perusahaan</div>
+                    <div class="package-price">Rp 4.500.000</div>
+                    <ul class="package-features">
+                        <li>Website Unlimited Halaman</li>
+                        <li>Free Template</li>
+                        <li>Custom Design</li>
+                        <li>Free Domain .com dan .id</li>
+                        <li>Hosting Premium 1 Tahun</li>
+                        <li>SSL Certificate</li>
+                        <li>Professional SEO</li>
+                        <li>E-commerce Ready</li>
+                        <li>Social Media Integration</li>
+                        <li>Live Chat Feature</li>
+                        <li>Support 12 Bulan</li>
+                    </ul>
+                    <a href="https://wa.me/6283112540839" class="package-button">Pilih Paket</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="kontak">
+        <div class="container">
+            <h2>Siap Memulai Proyek Anda?</h2>
+            <p>Hubungi kami sekarang untuk konsultasi gratis dan dapatkan penawaran terbaik!</p>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <span class="contact-icon">📞</span>
+                    <span>+62 831-1254-0839</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">✉️</span>
+                    <span>info@nusadigital.id</span>
+                </div>
+                <div class="contact-item">
+                    <span class="contact-icon">💬</span>
+                    <span>WhatsApp: +62 831-1254-0839</span>
+                </div>
+            </div>
+            <a href="https://wa.me/6283112540839" class="cta-button" style="margin-top: 2rem;">Konsultasi Gratis</a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Nusa Digital. Semua hak cipta dilindungi. | Jasa Pembuatan Website Profesional Indonesia</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Portfolio filtering functionality
+        const categoryBtns = document.querySelectorAll('.category-btn');
+        const portfolioItems = document.querySelectorAll('.portfolio-item');
+
+        categoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Remove active class from all buttons
+                categoryBtns.forEach(b => b.classList.remove('active'));
+                // Add active class to clicked button
+                this.classList.add('active');
+                
+                const filterValue = this.getAttribute('data-filter');
+                
+                portfolioItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.classList.remove('hidden');
+                        setTimeout(() => {
+                            item.style.opacity = '1';
+                            item.style.transform = 'scale(1)';
+                        }, 10);
+                    } else {
+                        item.style.opacity = '0';
+                        item.style.transform = 'scale(0.8)';
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                        }, 300);
+                    }
+                });
+            });
+        });
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.background = 'rgba(102, 126, 234, 0.95)';
+            } else {
+                header.style.background = 'linear-gradient(135deg, #667eea 0%, #1e40af 100%)';
+            }
+        });
+
+        // Animate elements on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all cards for animation
+        document.querySelectorAll('.feature-card, .pricing-card, .portfolio-item').forEach(card => {
+            card.style.opacity = '0';
+            card.style.transform = 'translateY(30px)';
+            card.style.transition = 'all 0.6s ease';
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>
